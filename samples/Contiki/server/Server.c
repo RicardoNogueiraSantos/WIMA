@@ -22,11 +22,13 @@ limitations under the License.
 #include "/home/user/WIMA/samples/Contiki/client/include/ImageDB.h"
 #include "/home/user/WIMA/samples/Contiki/client/include/TransferUDP.h"
 
-#define LOG_MODULE "Client "
+#define LOG_MODULE "Server "
 #define LOG_LEVEL LOG_LEVEL_INFO
+
 
 // 100 ms interval for communication tasks
 #define COM_INTERVAL (CLOCK_SECOND)/10  
+
 
 #define UDP_CLIENT_PORT 100
 #define UDP_SERVER_PORT 100
@@ -44,9 +46,6 @@ PROCESS_THREAD(wima_client_process, ev, data)
 	int conn_sts;
 
 
-	//simple_udp_register(&udp_conn, UDP_CLIENT_PORT, NULL,
-    //                  UDP_SERVER_PORT, udp_rx_callback);
-
 	PROCESS_BEGIN();
 	
 	LOG_INFO("WIMA sample code\n");
@@ -59,7 +58,7 @@ PROCESS_THREAD(wima_client_process, ev, data)
 	
 	tTransferUDP  * UDPTransfer=tTransferUDP_create();
 
-	UDPTransfer->registerComm(UDPTransfer,UDP_CLIENT_PORT,UDP_SERVER_PORT);
+	UDPTransfer->registerComm(UDPTransfer,UDP_SERVER_PORT,UDP_CLIENT_PORT);
 
 
 	while(1)
