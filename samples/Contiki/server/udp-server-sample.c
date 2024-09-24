@@ -32,8 +32,8 @@
 #include "net/netstack.h"
 #include "net/ipv6/simple-udp.h"
 
-#include "/home/user/WIMA/samples/Contiki/client/include/TransferUDP.h"
-#include "/home/user/WIMA/samples/Contiki/client/include/AppProtocol.h"
+#include "include/TransferUDP.h"
+#include "include/AppProtocol.h"
 
 #include "sys/log.h"
 #define LOG_MODULE "App"

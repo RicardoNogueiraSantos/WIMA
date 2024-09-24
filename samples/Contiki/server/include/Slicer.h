@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Image.h"
-#include "TransferUDP.h"
+#include "include/Image.h"
+#include "include/TransferUDP.h"
 
 typedef struct tSlicedData {
 	unsigned int slices;

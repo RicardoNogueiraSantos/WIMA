@@ -1,6 +1,6 @@
 #ifndef COMPRESSION_H
 #define COMPRESSION_H
-#include "Image.h"
+#include "include/Image.h"
 
 typedef struct tCompression {
 	tCompressedData * (*compressChangeDetectionData)(struct tCompression*, tCompressedData*);      

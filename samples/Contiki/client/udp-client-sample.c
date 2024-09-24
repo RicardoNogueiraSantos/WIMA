@@ -4,8 +4,8 @@
 #include "net/netstack.h"
 #include "net/ipv6/simple-udp.h"
 
-#include "/home/user/WIMA/samples/Contiki/client/include/TransferUDP.h"
-#include "/home/user/WIMA/samples/Contiki/client/include/AppProtocol.h"
+#include "include/TransferUDP.h"
+#include "include/AppProtocol.h"
 
 #include "sys/log.h"
 #define LOG_MODULE "App"
@@ -81,7 +81,7 @@ PROCESS_THREAD(udp_client_process, ev, data)
 	udpComm = tTransferUDP_create();
 	
 	if (udpComm != NULL) {
-		udpComm->registerComm(udpComm,UDP_SERVER_PORT, UDP_CLIENT_PORT);
+		udpComm->registerComm(udpComm,UDP_CLIENT_PORT,UDP_SERVER_PORT);
 
 		//Create protocol
 		tAppProtocol * protocol = tAppProtocol_create();
